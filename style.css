@@ -1,0 +1,300 @@
+/* --- CSS RESET & VARIABEL WARNA --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary-color: #9b5de5;
+    --secondary-color: #f15bb5;
+    --accent-color: #fee440;
+    --bg-gradient: linear-gradient(135deg, #fbcfe8 0%, #e9d5ff 100%);
+    --card-bg: #ffffff;
+    --text-color: #2d3748;
+    --text-muted: #718096;
+}
+
+body {
+    background: var(--bg-gradient);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* --- NAVBAR STYLING --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: var(--secondary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8rem 2rem 4rem 2rem;
+}
+
+.hero-card {
+    background: var(--card-bg);
+    padding: 3rem 2.5rem;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(155, 93, 229, 0.15);
+    max-width: 500px;
+    width: 100%;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.hero-card:hover {
+    transform: translateY(-5px);
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 4px solid var(--secondary-color);
+    box-shadow: 0 8px 20px rgba(241, 91, 181, 0.3);
+}
+
+.badge {
+    display: inline-block;
+    background: #fdf2f8;
+    color: var(--secondary-color);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    border: 1px solid #fbcfe8;
+}
+
+.hero-card h1 {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+/* --- ABOUT ME SECTION --- */
+.projects {
+    padding: 5rem 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.project-grid {
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: 24px;
+    max-width: 700px;
+    width: 100%;
+    box-shadow: 0 15px 35px rgba(155, 93, 229, 0.15);
+    text-align: center;
+}
+
+.project-grid h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.project-grid p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* --- FOOTER & CONTACT SECTION --- */
+.footer {
+    padding: 5rem 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-card {
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: 24px;
+    max-width: 550px;
+    width: 100%;
+    box-shadow: 0 15px 35px rgba(155, 93, 229, 0.15);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+}
+
+.footer-card h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+}
+
+.footer-card p {
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.contact-links {
+    width: 100%;
+}
+
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    width: 100%;
+    max-width: 300px;
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(241, 91, 181, 0.3);
+}
+
+.btn-secondary {
+    background: #f7fafc;
+    color: var(--text-color);
+    border: 1px solid #e2e8f0;
+}
+
+.btn-secondary:hover {
+    background: #edf2f7;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 1.5rem;
+}
+
+/* --- RESPONSIVE DESIGN (MOBILE) --- */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .hero {
+        padding-top: 9rem;
+    }
+    
+    .hero-card, .project-grid, .footer-card {
+        padding: 2rem 1.5rem;
+    }
+}
+
+:root {
+    --primary-color: #a855f7;   /* Ungu terang/modern */
+    --secondary-color: #ec4899; /* Pink cerah */
+    --accent-color: #f472b6;    /* Pink lembut */
+    --bg-gradient: linear-gradient(135deg, #fce7f3 0%, #f3e8ff 100%); /* Gradasi latar belakang soft pink & ungu */
+    --card-bg: #ffffff;
+    --text-color: #3b0764;      /* Teks ungu sangat gelap agar kontras */
+    --text-muted: #6b21a8;      /* Teks sekunder ungu keabuan */
+}
+
+/* Efek border foto profil dengan tema pink-ungu */
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 4px solid var(--secondary-color);
+    box-shadow: 0 0 25px rgba(236, 72, 153, 0.4); /* Efek glow pink */
+}
+
+/* Tombol Secondary (Instagram & TikTok) dengan sentuhan pink */
+.btn-secondary {
+    background: #fdf2f8;
+    color: var(--secondary-color);
+    border: 1px solid #fbcfe8;
+}
+
+.btn-secondary:hover {
+    background: var(--secondary-color);
+    color: white;
+    border-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
+}
